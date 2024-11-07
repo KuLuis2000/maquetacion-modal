@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/d188054eba.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="estilo.css" />
+  </head>
+  <body>
+    <header>
+      <figure><img src="imagenes/logo.jpg" alt="" /></figure>
+    </header>
+    <section>
+      <article>
+        <p>Our team</p>
+        <h1>A Dedicated Team Of Experts</h1>
+        <h3>
+          Passion, experience and a fierce commitment to education are <br />
+          the cornerstones of our success in the beauty industry
+        </h3>
+        <p>
+          We believe that being the ñargest SPA in the area is not enough in
+          itself to satisfy the <br />
+          needs or our customers. For this reason we have build up a staff of
+          specialized <br />
+          proffessionals who are proud to welcome you to our hotel, present What
+          We Do, listen <br />
+          to your needs and guarantee well-being and relaxation during your stay
+          at your SPA <br />
+          Resort.
+        </p>
+        <p>
+          Everyone in our team is a certified specialist capable of elivering a
+          unique service of <br />
+          high quality you won't find anywhere else in modern spa and resort
+          industry.
+        </p>
+
+        <div class="links">
+          <a class="more" href="#">LEARN MORE</a>
+          <a class="view" href="#">VIEW ALL TEAM</a>
+        </div>
+      </article>
+
+      <article class="modales">
+        <div class="perfiles">
+          <div class="perfil">
+            <figure>
+                <img src="imagenes/foto1.jpg" alt="" />
+              </figure>
+    
+              <h2>Jessica Cooper</h2>
+                <p>Esthetician</p>
+                <div class="redes">
+                    <i class='fa-brands fa-facebook-f'></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-pinterest"></i>
+                </div>
+                <a id="abrir-modal" href="#">GET IN TOUCH</a>
+          </div>
+
+          <div class="perfil">
+            <figure>
+                <img src="imagenes/foto2.jpg" alt="" />
+              </figure>
+    
+              <h2>Robert Wagner</h2>
+                <p>Hairdresser</p>
+                <div class="redes">
+                    <i class='fa-brands fa-facebook-f'></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-pinterest"></i>
+                </div>
+                <a id="abrir-modal1" href="#">GET IN TOUCH</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div id="modal" class="banner-contenedor">
+        <div class="banner-modal">
+            <div class="cierre">
+                <i id="cerrar-modal" class="fa-solid fa-square-xmark"></i>
+            </div>
+            <form action="" class="formulario" method="post" onsubmit="validarFormulario(event)">
+                <h1>Contact Us</h1>
+                <p>If you have any questions concerning our services, please fill out the <br>
+                contact form below</p>
+                <input type="text" placeholder="Name *" name="Usuario">
+                <br><br>
+                <input type="email" placeholder="Email" name="Email">
+                <br><br>
+                <input type="password" placeholder="Contraseña" name="Contraseña">
+                <br><br>
+                <textarea name="comentario" id="comentario" placeholder="Escribe un comentario..."></textarea>
+                <br><br>
+                <input type="submit" value="SUBMIT" class="boton">
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        
+    </footer>
+
+    <!-- Funciones JS -->
+
+    <script>
+        $("#abrir-modal").click(function(){
+            $("#modal").addClass("mostrar");
+        })
+        $("#cerrar-modal").click(function(){
+            $("#modal").removeClass("mostrar");
+        })
+        $("#abrir-modal1").click(function(){
+            $("#modal").addClass("mostrar");
+        })
+        $("#cerrar-modal").click(function(){
+            $("#modal").removeClass("mostrar");
+        })
+
+        window.onclick = function (event) {
+        if (event.target == modal){
+            $("#modal").removeClass("mostrar");
+        }
+    };
+
+    document.addEventListener('keydown', function (event){
+        if (event.key === 'Escape'){
+            $("#modal").removeClass("mostrar");
+        }
+    });
+    </script>
+
+<script>
+    function validarFormulario(event) {
+        event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+        // Obtener los valores de los campos
+        const nombre = document.querySelector('input[name="Usuario"]').value;
+        const email = document.querySelector('input[name="Email"]').value;
+        const contraseña = document.querySelector('input[name="Contraseña"]').value;
+
+        // Expresión regular para validar el formato del email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Validaciones
+        if (nombre.trim() === '') {
+            alert('El nombre es obligatorio.');
+            return;
+        }
+
+        if (email.trim() === '') {
+            alert('El email es obligatorio.');
+            return;
+        }
+
+        if (!emailRegex.test(email)) {
+            alert('El formato del email es incorrecto.');
+            return;
+        }
+
+        if (contraseña.trim() === '') {
+            alert('La contraseña es obligatoria.');
+            return;
+        }
+
+        if (contraseña.length < 8) {
+            alert('La contraseña debe tener al menos 8 caracteres.');
+            return;
+        }
+
+        // Si todas las validaciones son exitosas, se envía el formulario
+        document.querySelector('form').submit();
+    }
+</script>
+
+  </body>
+</html>

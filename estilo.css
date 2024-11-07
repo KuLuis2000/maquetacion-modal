@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+
+body {
+  font-family: helvetica;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+}
+
+.ancho {
+  max-width: 1200px;
+  margin: auto;
+}
+
+header {
+  background-color: #f5f0dd;
+  padding: 10px;
+}
+
+figure {
+  height: 80px;
+  width: 300px;
+  margin: auto;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: auto;
+}
+
+article {
+  max-width: 580px;
+}
+
+article h1 {
+  font-size: 30px;
+  margin-top: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+article h3 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+article p {
+  margin-top: 20px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px 20px;
+}
+
+.more {
+  text-decoration: none;
+  background-color: #f1556f;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 30px;
+}
+
+.view {
+  text-decoration: none;
+  border: 2px #ccc solid;
+  color: #333;
+  padding: 8px 28px;
+  border-radius: 30px;
+}
+
+.modales {
+  width: 580px;
+  background-color: #ececec;
+  text-align: center;
+}
+
+.perfiles {
+  height: auto !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15%;
+}
+
+.modales figure {
+  border-radius: 100%;
+  width: 170px;
+  height: 170px;
+}
+
+.modales figure img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.modales .perfiles h2 {
+  margin: auto;
+  width: 180px;
+  margin-top: 20px;
+  color: #f1556f;
+}
+
+.modales .perfiles p {
+  margin-top: 5px;
+  color: #a19f9f;
+}
+
+.redes {
+  margin-top: 15px;
+  width: 90%;
+  margin: auto;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #868686;
+}
+
+.modales a {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 20px;
+  background-color: #f1556f;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.banner-contenedor {
+  position: relative;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.658);
+  display: none;
+}
+
+.banner-modal {
+  padding: 20px;
+  overflow: auto;
+  background-color: white;
+  width: 45%;
+  height: 70vh;
+}
+
+.mostrar {
+  display: flex;
+}
+
+.boton {
+  color: white;
+  width: 20%;
+  background-color: #f1556f;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+.formulario h1 {
+  font-family: "Times New Roman", Times, serif;
+  margin-top: 20px;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.formulario p {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 30px;
+  border: 2px #ccc solid;
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  overflow: auto;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 2px #ccc solid;
+}
+
+.cierre {
+  position: absolute;
+  font-size: 25px;
+  top: 10%;
+  right: 27.5%;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #f1556f;
+  height: 30px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    section{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .modales .perfiles .perfil h2 {
+      margin-top: 20px;
+      color: #f1556f;
+    }
+    
+    .modales .perfiles .perfil p {
+      margin-top: 5px;
+      color: #a19f9f;
+    }
+
+    .modales{
+        width: 100%;
+    }
+
+    .perfiles{
+        flex-direction: column;
+    }
+
+    .banner-modal{
+        width: 90%;
+    }
+
+    .cierre{
+        right: 6.5%;
+        cursor: pointer;
+    }
+
+    .links{
+        flex-direction: column;
+    }
+
+    .perfil{
+        margin-bottom: 30px;
+    }
+
+    article{
+        padding: 20px;
+    }
+
+    .more{
+        margin-bottom: 10px;
+    }
+
+    .boton{
+        width: 40%;
+    }
+}
